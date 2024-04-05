@@ -15,18 +15,18 @@ validPassword = "123"
 validUsername = "batman"
 initialValance = 2000
 flag = true
-flagExit = true
-max_attemps = 2
+
+max_attemps = 3
    
-    while flag
+    loop do
         print "What is your username? "
         username = gets.chomp
         print "What is your password? "
         password = gets.chomp
-        print(number_attemps)
+
         if  password == validPassword && username == validUsername
             
-            while flagExit
+            loop do
 
                 puts "Welcome"
                 puts "1.Deposit"
@@ -60,14 +60,13 @@ max_attemps = 2
                         flag = false
                             
                     end
+                break if option == 5
             
             end
            
-        elsif number_attemps == max_attemps
-            "You have reached the maximum number of attemps, please try again later"
-            flag = false
         else 
             number_attemps +=1
         end
+        break if max_attemps == number_attemps
        
     end
